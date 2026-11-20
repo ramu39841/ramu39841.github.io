@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ramu M · Full-Stack Developer (Angular, .NET, SQL Server)</title>
+<meta name="description" content="Ramu M, Software Engineer and Full-Stack Developer with 6 years of ERP experience in Angular, C# / ASP.NET Core and SQL Server.">
+<meta property="og:title" content="Ramu M · Full-Stack Developer">
+<meta property="og:description" content="6 years building ERP software: HR, payroll, accounts, assets and inventory. Angular · .NET · SQL Server.">
+<meta property="og:type" content="website">
+<style>html{scroll-behavior:smooth} body{margin:0} img{max-width:100%} [hidden]{display:none!important} section{scroll-margin-top:64px}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single readable column with an indigo "warp" hero, a thread-line career timeline, and module chips borrowed from ERP menus */
+:root {
+  --bg: #f5f6fb;
+  --surface: #ffffff;
+  --fg: #151a34;
+  --muted: #5b6182;
+  --line: #dde0ee;
+  --accent: #3242b8;        /* indigo dye */
+  --accent-soft: #e7e9fb;
+  --thread: #c9771f;        /* saffron thread */
+  --hero-bg: #1c2466;
+  --hero-fg: #f2f3fb;
+  --hero-muted: #b7bde6;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1024; --surface: #151a36; --fg: #e7e9f6; --muted: #a3a8c8; --line: #272d52;
+    --accent: #95a1ff; --accent-soft: #232a5c; --thread: #e9a24f;
+    --hero-bg: #121848; --hero-fg: #f2f3fb; --hero-muted: #aab1e2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1024; --surface: #151a36; --fg: #e7e9f6; --muted: #a3a8c8; --line: #272d52;
+  --accent: #95a1ff; --accent-soft: #232a5c; --thread: #e9a24f;
+  --hero-bg: #121848; --hero-fg: #f2f3fb; --hero-muted: #aab1e2;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--thread); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Top nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--hero-bg); }
+.topnav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--hero-bg); border-bottom: 1px solid rgba(255,255,255,.1); }
+.topnav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 12px; }
+.topnav .mark { font-family: var(--font-display); font-weight: 800; color: var(--hero-fg); text-decoration: none; font-size: 18px; }
+.topnav .mark span { color: var(--thread); }
+.topnav nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.topnav nav a { color: var(--hero-muted); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 6px; }
+.topnav nav a:hover { color: var(--hero-fg); background: rgba(255,255,255,.08); }
+@media (max-width: 560px) { .topnav nav a.opt { display: none; } }
+
+/* About */
+.strengths { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.strength { border-top: 3px solid var(--thread); padding-top: 14px; min-width: 0; }
+.strength h3 { font-family: var(--font-display); font-size: 19px; margin: 0 0 6px; }
+.strength p { margin: 0; color: var(--muted); }
+
+/* Hero */
+.hero { background: var(--hero-bg); color: var(--hero-fg); position: relative; overflow: hidden; }
+.hero::before { /* woven warp lines */
+  content: ""; position: absolute; inset: 0; opacity: .14; pointer-events: none;
+  background-image: repeating-linear-gradient(90deg, var(--hero-fg) 0 1px, transparent 1px 14px);
+}
+.hero .wrap { position: relative; padding-block: 64px 56px; display: grid; gap: 20px; }
+.eyebrow { font-family: var(--font-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-muted); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: #4cc38a; box-shadow: 0 0 0 4px rgba(76,195,138,.2); }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(44px, 9vw, 88px); line-height: 1; margin: 0; letter-spacing: -.02em; text-wrap: balance; }
+h1 .stitch { color: var(--thread); }
+.hero .role { font-family: var(--font-display); font-size: clamp(20px, 3.2vw, 28px); font-weight: 500; margin: 0; color: var(--hero-fg); text-wrap: balance; }
+.hero .lede { max-width: 60ch; color: var(--hero-muted); margin: 0; font-size: 17px; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.btn { display: inline-block; padding: 11px 20px; border-radius: 999px; font-weight: 600; text-decoration: none; font-size: 15px; }
+.btn-solid { background: var(--thread); color: #1b1305; }
+.btn-ghost { border: 1px solid var(--hero-muted); color: var(--hero-fg); }
+.facts { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 20px; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,.25); }
+.fact strong { display: block; font-family: var(--font-display); font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.fact span { font-size: 13px; color: var(--hero-muted); }
+
+/* Sections */
+section { padding-block: 56px 8px; }
+h2 { font-family: var(--font-display); font-size: clamp(26px, 4vw, 34px); margin: 0 0 6px; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0 0 28px; max-width: 62ch; }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 28px; position: relative; display: grid; gap: 36px; }
+.timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px;
+  background: repeating-linear-gradient(180deg, var(--thread) 0 8px, transparent 8px 14px); }
+.job { position: relative; min-width: 0; }
+.job::before { content: ""; position: absolute; left: -27px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; align-items: baseline; }
+.job h3 { font-family: var(--font-display); font-size: 22px; margin: 0; }
+.job .org { color: var(--accent); font-weight: 600; }
+.job .when { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.job ul { margin: 10px 0 0; padding-left: 18px; color: var(--fg); }
+.job li { margin-bottom: 4px; }
+.modules { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { font-family: var(--font-mono); font-size: 12px; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); border: 1px solid transparent; }
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+.skill { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; min-width: 0; }
+.skill h3 { font-size: 15px; margin: 6px 0 10px; font-family: var(--font-body); font-weight: 600; }
+.skill ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.skill li { font-size: 14px; padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; }
+
+/* Projects */
+.projects { display: grid; gap: 18px; }
+.project { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; min-width: 0; }
+.project.featured { border-color: var(--accent); box-shadow: 0 8px 24px -16px var(--accent); }
+.project h3 { font-family: var(--font-display); font-size: 21px; margin: 0; }
+.project p { margin: 0; color: var(--muted); max-width: 65ch; }
+.stack { font-family: var(--font-mono); font-size: 13px; color: var(--thread); }
+.project .links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 6px; font-size: 14px; font-weight: 600; }
+.pending { color: var(--muted); font-weight: 500; font-style: italic; }
+
+/* Contact */
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; display: grid; gap: 18px; }
+.contact-rows { display: grid; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.row .label { width: 90px; }
+.row .val { font-weight: 500; overflow-wrap: anywhere; min-width: 0; }
+.copy { font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+footer { padding-block: 40px 32px; color: var(--muted); font-size: 13px; }
+
+@media (min-width: 720px) {
+  .project { grid-template-columns: 1fr auto; align-items: start; }
+  .project .meta { grid-column: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .eyebrow .dot { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(76,195,138,.05); } }
+}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <div class="wrap">
+    <a class="mark" href="#top">Ramu M<span>.</span></a>
+    <nav aria-label="Sections">
+      <a class="opt" href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a class="opt" href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Open to full-stack roles · Andhra Pradesh / Chennai / Bengaluru / Hyderabad</div>
+    <h1>Ramu M<span class="stitch">.</span></h1>
+    <p class="role">Software Engineer · Full-Stack Developer<br>Angular · C# / ASP.NET Core · SQL Server</p>
+    <p class="lede">I build the business software companies run on every day. Over six years I've taken ERP features from requirement to release, covering HR, payroll, accounts, assets and inventory, from the database design up to the screens people use.</p>
+    <div class="cta">
+      <a class="btn btn-solid" href="#projects">See my work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>6 yrs</strong><span>building ERP software</span></div>
+      <div class="fact"><strong>6</strong><span>ERP modules delivered</span></div>
+      <div class="fact"><strong>UI → DB</strong><span>full-stack ownership</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="wrap">
+      <h2>What I bring</h2>
+      <p class="sub">A developer who understands how the business works, not only how the code works.</p>
+      <div class="strengths">
+        <div class="strength">
+          <h3>ERP domain knowledge</h3>
+          <p>Five years inside a textile manufacturer's ERP taught me how HR, payroll, purchasing, sales and stock connect, and where the edge cases hide.</p>
+        </div>
+        <div class="strength">
+          <h3>Full-stack delivery</h3>
+          <p>I design the SQL tables and stored procedures, write the C# APIs and build the Angular screens, so a feature doesn't stall between teams.</p>
+        </div>
+        <div class="strength">
+          <h3>Close to the users</h3>
+          <p>I gather requirements directly from accounts, HR and production staff, explain the solution in plain terms and support them after go-live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+      <p class="sub">From an in-house textile ERP to enterprise framework development.</p>
+      <ol class="timeline">
+        <li class="job">
+          <div class="job-head">
+            <h3>Software Engineer · <span class="org">VySystems</span></h3>
+            <span class="when">Oct 2025 – Present · Chennai</span>
+          </div>
+          <ul>
+            <li>Developing a framework-based ERP application with Angular 15 as a full-stack developer.</li>
+            <li>Building reusable UI components, forms and modules for core ERP features.</li>
+            <li>Integrating the frontend with backend REST APIs and SQL Server.</li>
+          </ul>
+        </li>
+        <li class="job">
+          <div class="job-head">
+            <h3>Software Engineer · <span class="org">Aauraa Home Fashion</span></h3>
+            <span class="when">Dec 2020 – Oct 2025 · Karur</span>
+          </div>
+          <ul>
+            <li>Developed and maintained the company's in-house Textile ERP for home textile manufacturing.</li>
+            <li>Designed database tables, stored procedures and reports in SQL Server.</li>
+            <li>Worked directly with business users to gather requirements, fix issues and roll out features.</li>
+          </ul>
+          <div class="modules" aria-label="ERP modules built">
+            <span class="chip">HR</span><span class="chip">Payroll</span><span class="chip">Accounts Payable</span>
+            <span class="chip">Accounts Receivable</span><span class="chip">Asset Management</span><span class="chip">Inventory</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <p class="sub">The stack I use to take a feature from database table to finished screen.</p>
+      <div class="skills">
+        <div class="skill"><span class="label">Frontend</span><h3>Screens & forms</h3>
+          <ul><li>Angular 15+</li><li>TypeScript</li><li>RxJS</li><li>HTML5</li><li>CSS3</li></ul></div>
+        <div class="skill"><span class="label">Backend</span><h3>APIs & logic</h3>
+          <ul><li>C#</li><li>ASP.NET Core Web API</li><li>Entity Framework Core</li><li>REST</li></ul></div>
+        <div class="skill"><span class="label">Database</span><h3>Data & reports</h3>
+          <ul><li>SQL Server</li><li>Stored procedures</li><li>Query tuning</li><li>Reporting</li></ul></div>
+        <div class="skill"><span class="label">Tools</span><h3>Daily workflow</h3>
+          <ul><li>Git & GitHub</li><li>Visual Studio</li><li>VS Code</li><li>Postman</li><li>SSMS</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="sub">Production systems I've worked on, plus a personal build that shows the full stack end to end.</p>
+      <div class="projects">
+        <article class="project featured">
+          <div class="meta">
+            <span class="label">Personal project</span>
+            <h3>Textile Tracker</h3>
+            <p>A business app for small textile firms. Tracks fabrics by type, color and size, records stock in and out inside database transactions, flags low stock on a dashboard and keeps employee records in an HR module. Secured with JWT login and hashed passwords.</p>
+            <div class="stack">Angular 19 · ASP.NET Core 8 · EF Core · SQL Server · JWT</div>
+          </div>
+          <div class="links"><span class="pending">Live demo & GitHub coming soon</span></div>
+        </article>
+        <article class="project">
+          <div class="meta">
+            <span class="label">Aauraa Home Fashion</span>
+            <h3>Textile ERP</h3>
+            <p>End-to-end ERP for a home textile manufacturer, connecting HR, payroll, payables, receivables, assets and inventory in one system used across departments.</p>
+            <div class="stack">.NET · SQL Server · Reporting</div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="meta">
+            <span class="label">VySystems</span>
+            <h3>Framework ERP</h3>
+            <p>A framework-based enterprise ERP with reusable Angular components and modules, built on REST APIs.</p>
+            <div class="stack">Angular 15 · REST APIs · SQL Server</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk</h2>
+          <p class="sub" style="margin-bottom:0">Open to Full-Stack, .NET and Angular developer roles in Andhra Pradesh, Chennai, Bengaluru, Hyderabad, or remote.</p>
+        </div>
+        <div class="contact-rows">
+          <div class="row"><span class="label">Location</span><span class="val">Chennai, Tamil Nadu, India</span></div>
+          <div class="row"><span class="label">GitHub</span><a class="val" href="https://github.com/ramu39841" target="_blank" rel="noopener">github.com/ramu39841</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Ramu M · Built with HTML & CSS</div></footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const el = document.getElementById(btn.dataset.target);
+    const text = el.textContent.trim();
+    const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 1500); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected'; };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+});
+</script>
+</body>
+</html>
